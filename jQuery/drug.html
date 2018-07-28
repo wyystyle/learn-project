@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>drug</title>
+	<style type="text/css">
+		#container{
+			width: 300px;
+			height: 300px;
+			background: blue;
+		}
+		#draget{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('#draget').on('dragstart',function(ev){
+				ev.originalEvent.dataTransfer.setData('dragId',ev.draget.id)
+			});
+
+
+			$('#container')
+			.on('drop',function(ev){
+				var dragId=ev.originalEvent.dataTransfer.getData('dragId')
+				$('#container').append($('#'+dragId))
+
+			})
+			.on('dragover',function(ev){
+				ev.preventDefault();
+			})
+			
+			
+
+
+		})
+	</script>
+</head>
+<body>
+	<div class="container" id="container"></div>
+	<div class="draget" id="draget" draggable="true"></div>
+</body>
+</html>

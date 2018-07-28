@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>057-form</title>
+</head>
+<body>
+	<form action="https://www.baidu.com">
+		<div>
+			<input type="text" name="username">
+		</div>
+		<div>
+			<input type="text" name="age">
+		</div>
+		<div>
+			<select id="lis">
+				<option value="1">北京</option>
+				<option value="2">上海</option>
+				<option value="3">深圳</option>
+			</select>
+		</div>
+		<div>
+			<input type="submit" value="提交">
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+		var aForms=document.forms;
+		//console.log(aForm);
+		var oForm=aForms[0];
+		var aFormEle=oForm.elements;
+		//console.log(oForm.elements);
+		aFormEle.username.distabled=true;
+	</script>
+</html>

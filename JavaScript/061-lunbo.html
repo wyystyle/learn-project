@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>061-lunbo</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 1226px;
+			height: 460px;
+			position: absolute;
+			left: 150px;
+			top: 100px;
+		}
+		#box #imgbox{
+			width: 100%;
+			height: 100%;
+/*			overflow: hidden;*/
+		}
+		#box #imgbox li{
+			list-style: none;
+			width: 100%;
+			height: 100%;
+			float: left;
+			position: absolute;
+		}
+		#box #imgbox li img{
+			width: 100%;
+		}
+		#box span{
+			display: block;
+			width: 50px;
+			height: 30px;
+			background: #ccc;
+			line-height: 30px;
+			text-align: center;
+			position: absolute;
+			z-index: 9999;
+			cursor: pointer;
+			color: white;
+		}
+
+		#box #leftbtn{
+			left: 0px;
+			top: 245px;
+		}
+		#box #rightbtn{
+			right: 0;
+			top: 245px;
+		}
+		#box #btn{
+			width: 200px;
+			height: 30px;
+	/*		background: pink;*/
+			position: absolute;
+			right: 513px;
+			bottom: 10px;
+			z-index: 999;
+		}
+		#box #btn li{
+			width: 30px;
+			height: 30px;
+			list-style: none;
+			border-radius: 50%;
+			/*background: #ccc;*/
+			border: 1px solid #fff;
+			margin-left: 20px;
+			float: left;
+			cursor: pointer;
+		}
+		#box #btn li:nth-child(1){
+			margin-left: 10px;
+		}
+		.active{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul id="imgbox">
+			<li><img src="images/006.jpg"></li>
+			<li><img src="images/007.jpg"></li>
+			<li><img src="images/008.jpg"></li>
+			<li><img src="images/009.jpg"></li>
+		</ul>
+		<span id="leftbtn">&lt;</span>
+		<span id="rightbtn">&gt;</span>
+		<ul id="btn">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	(function(w){
+		function show(){
+			var aImgLi=document.getElementById('imgbox').children;
+			var aBtnLi=document.getElementById('btn').children;
+			var oLeftBtn=document.getElementById('leftbtn');
+			var oRightBtn=document.getElementById('rightbtn');
+			var oBox=document.getElementById('box');
+			// console.log(oLeftBtn);
+			var now=0;
+			var timer=null;
+			oRightBtn.onclick=function(){
+				// for(var i=0;i<aImgLi.length;i++){
+				// 	aImgLi[i].style.zIndex=0;
+				// 	aBtnLi[i].className='';
+				// }
+				now++;
+				if(now>=aImgLi.length){
+					now=0;
+				}
+				tab();
+				// aImgLi[now].style.zIndex=30;
+				// aBtnLi[now].className='active';
+			}
+			oLeftBtn.onclick=function(){
+				// for(var i=0;i<aImgLi.length;i++){
+				// 	aImgLi[i].style.zIndex=0;
+				// 	aBtnLi[i].className='';
+				// }
+				now--;
+				if(now<0){
+					now=aImgLi.length-1;
+				}
+				tab();
+				// aImgLi[now].style.zIndex=30;
+				// aBtnLi[now].className='active';
+			}
+			function tab(){
+				for(var i=0;i<aImgLi.length;i++){
+					aImgLi[i].style.zIndex=0;
+					aBtnLi[i].className='';
+				}
+				aImgLi[now].style.zIndex=30;
+				aBtnLi[now].className='active';
+			}
+			/*console.log(aBtnLi);*/
+			for(var i=0;i<aImgLi.length;i++){
+				aBtnLi[i].index=i;
+				aBtnLi[i].onclick=function(){
+					// console.log(this)
+					now=this.index;
+					tab();
+
+				}
+			}
+			timer=setInterval(function(){
+				oRightBtn.onclick()
+			},1000);
+
+			oBox.onmouseover=function(){
+				clearInterval(timer);
+
+			}
+			oBox.onmouseout=function(){
+				timer=setInterval(function(){
+				oRightBtn.onclick()
+			},1000);
+			}
+
+			
+
+		}
+		w.show=show;
+	})(window)
+	show();
+</script>
+</html>

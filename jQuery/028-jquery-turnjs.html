@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028-juqery-turnjs</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+
+		}
+		body{
+			overflow: hidden;
+		}
+		.content{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+		}
+		.book{
+			width: 700px;
+			height: 400px;
+			position: absolute;
+			left: -350px;
+			top: -200px;
+		}
+
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="../pulgin/turnjs4/lib/turn.min.js"></script>
+	<script>
+		$(function(){
+			$('.book').turn();
+		})
+	</script>
+</head>
+<body>
+	<div class="content">
+		<div class="book">
+			<div style="background: url(../pulgin/turnjs4/samples/double-page/pages/1.jpg);"></div>
+			<div style="background: url(../pulgin/turnjs4/samples/double-page/pages/2.jpg);"></div>
+			<div style="background: url(../pulgin/turnjs4/samples/double-page/pages/3.jpg);"></div>
+			<div style="background: url(../pulgin/turnjs4/samples/double-page/pages/4.jpg);"></div>
+			<div style="background: url(../pulgin/turnjs4/samples/double-page/pages/5.jpg);"></div>
+			<div style="background: url(../pulgin/turnjs4/samples/double-page/pages/6.jpg);"></div>
+			<div style="background: url(../pulgin/turnjs4/samples/double-page/pages/7.jpg);"></div>
+		</div>
+	</div>
+</body>
+</html>

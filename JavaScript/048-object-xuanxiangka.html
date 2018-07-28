@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>048-object-xuanxiangka</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding:0;
+		}
+		.btn{
+			overflow: hidden;
+		}
+		.btn li{
+			list-style: none;
+			width: 60px;
+			height: 30px;
+			background: #ccc;
+			text-align: center;
+			border-radius: 10px;
+			float: left;
+			margin-left: 10px;
+			
+		}
+		.content li{
+			width: 200px;
+			height: 400px;
+			border: 1px solid #000;
+			display: none;
+			margin-left: 10px;
+
+		}
+		.active{
+			background: pink;
+			color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload =function(){
+			new Tab();
+		}
+		function Tab(){
+			this.aBtn = document.getElementById('btn').children;
+			this.aContent = document.getElementById('content').children;
+			for(var i=0;i<this.aBtn.length;i++){
+				this.aBtn[i].index=i;
+				this.aBtn[i].onclick=this.fnClick.bind(this);
+			}
+		}
+		Tab.prototype.fnClick=function(){
+			for(var j=0;j<this.aBtn.length;j++){
+				this.aBtn[j].className='';
+				this.aContent[j].style.display='none';
+			}
+			this.aBtn[this.index].className='active';
+			this.aContent[this.index].style.display='block';
+		}
+	</script>
+</head>
+<body>
+	<ul id="btn" class="btn">
+		<li class="active">btn1</li>
+		<li>btn2</li>
+		<li>btn3</li>
+		<li>btn4</li>
+	</ul>
+	<ul id="content" class="content">
+		<li style="display: block;">content1</li>
+		<li>content2</li>
+		<li>content3</li>
+		<li>content4</li>
+	</ul>
+</body>
+</html>

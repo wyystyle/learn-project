@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>drag-拼图</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 225px;
+			height: 300px;
+			margin: 100px auto;
+
+		}
+		li{
+			list-style: none;
+	/*		width: 75px;
+			height: 100px;*/
+			float: left;
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			var dragIn=null;
+			$('.container')
+			.on('dragstart','li',function(){
+				dragIn=this;
+				console.log(this)//此处this应是Dom节点
+			})
+			.on('drop','li',function(ev){
+				if(dragIn!=this){
+					var tmp=dragIn.innerHTML;
+					dragIn.innerHTML=this.innerHTML;
+					this.innerHTML=tmp;
+				}
+			})
+			.on('dragover','li',function(ev){
+				ev.preventDefault()
+			})
+		})
+	</script>
+</head>
+<body>
+	<ul class="container">
+		<li draggable="true"><img src="images/001_01.png" alt=""></li>
+		<li draggable="true"><img src="images/001_02.png" alt=""></li>
+		<li draggable="true"><img src="images/001_03.png" alt=""></li>
+		<li draggable="true"><img src="images/001_04.png" alt=""></li>
+		<li draggable="true"><img src="images/001_05.png" alt=""></li>
+		<li draggable="true"><img src="images/001_06.png" alt=""></li>
+		<li draggable="true"><img src="images/001_07.png" alt=""></li>
+		<li draggable="true"><img src="images/001_08.png" alt=""></li>
+		<li draggable="true"><img src="images/001_09.png" alt=""></li>
+
+	</ul>
+</body>
+</html>

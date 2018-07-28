@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D案例练习1</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul {
+			height: 500px;
+			margin-top: 100px;
+			background: skyblue;
+            text-align: center;
+		}
+		ul li{
+			width: 150px;
+			height: 200px;
+			border: 3px solid white;
+			box-shadow: 0 0 10px;
+			list-style: none;
+			display: inline-block;
+			margin-left: 20px;
+			margin-top: 150px;
+			position: relative;
+			transition: all 1s;
+		}
+		ul li img{
+			width: 150px;
+			height: 200px;
+		}
+		ul li:nth-child(1){
+			transform: rotate(30deg);
+		}
+		ul li:nth-child(2){
+			transform: rotate(-50deg);
+		}ul li:nth-child(3){
+			transform: rotate(45deg);
+		}ul li:nth-child(4){
+			transform: rotate(20deg);
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+		ul li:hover{
+			transform: scale(1.5) rotate(0deg);
+            z-index: 1;
+            opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="../007/11.jpg"></li>
+		<li><img src="../007/12.jpg"></li>
+		<li><img src="../007/13.jpg"></li>
+		<li><img src="../007/14.jpg"></li>
+	</ul>
+</body>
+</html>

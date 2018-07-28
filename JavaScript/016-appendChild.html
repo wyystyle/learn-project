@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-appendChild</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oUl = document.getElementById('ul1');
+			var oBtn = document.getElementById('btn');
+			var oTxt = document.getElementById('txt');
+			oBtn.onclick = function(){
+				var oLi=document.createElement('li');
+				oUl.appendChild(oLi);
+				oLi.innerHTML=oTxt.value;
+				var oA=document.createElement('a');
+				oA.harf='javascript';
+				oA.value='del';
+				oLi.appendChild(oA);
+			}
+			oA.onclick=function(){
+				 
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="添加" id="btn">
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09-daoxunhuan</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;		
+		}
+	</style>
+	<script type="">
+		window.onload = function(){
+			var oTxt =  document.getElementById('txt')
+			var oBtn = document.getElementById('btn')
+			var oBox = document.getElementById('box')
+			oBtn.onclick = function(){
+				oBox.innerHTML=oTxt.value;
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="提交" id="btn">
+	<div id="box"></div>
+</body>
+</html>

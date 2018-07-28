@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SVG</title>
+	<style type="text/css">
+		svg{
+			border: 1px solid #ccc;
+			width: 600px;
+			height: 600px;
+			/*background: red;*/
+		}
+		rect{
+			width: 5px;
+			height: 25px;
+		}
+		line{
+			/*线条的颜色*/
+			stroke: rgb(88,88,88);
+			/*线条宽度*/
+			stroke-width:1;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 加上viewBox="x y width height"可视区的坐标为 x y 宽 高 -->
+	<svg viewBox="0 0 50 50">
+		<!-- 矩形
+		<rect /> -->
+		<!-- 两点确定一条直线 -->
+		<line x1="0" y1="0" x2="10" y2="10" />
+
+	</svg>
+</body>
+</html>

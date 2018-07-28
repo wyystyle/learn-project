@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023-change-opcity</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			background: green;
+			position: absolute;
+		}
+	</style>
+	<script type="text/javascript">
+		function animation(obj,attr,iTarget){
+			var iSpeed=0;
+			var curr = parseFloat(getComputedStyle(obj,false)[attr]);
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				if(curr<iTarget){
+					iSpeed=10;
+				}else{
+					iSpeed=-10;
+				}
+				if(Math.abs(curr - iTarget)<Math.abs(iSpeed)){
+					clearInterval(obj.timer);
+					obj.style[attr]=iTarget+'px';
+				}else{
+					obj.style[attr]=curr + iSpeed +'px';
+				}
+			},30);
+		}
+		window.onload = function(){
+			var oBox = document.getElementById('box');
+			oBox.onmouseover = function(){
+				animation(oBox,'left',500);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

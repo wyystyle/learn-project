@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D旋转xyz轴练习1</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	ul{
+		width: 800px;
+		height: 800px;
+		margin: 50px auto;
+		perspective: 500px;
+	}
+		ul li{
+			width: 200px;
+			height: 200px;
+			list-style: none;
+			float: left;
+			border: 1px solid #000;
+			margin: 0 auto;
+			transition: transform,1.5s;
+		}
+		ul li img{
+			height: 100%;
+			width: 100%;
+			transform-origin: center bottom;
+		}
+		ul li:nth-child(1):hover{
+			transform: rotateX(60deg);
+		}
+		ul li:nth-child(2):hover{
+			transform: rotateY(60deg);
+		}
+		ul li:nth-child(3):hover{
+			transform: rotateZ(60deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="../007/11.jpg"></li>
+		<li><img src="../007/12.jpg"></li>
+		<li><img src="../007/13.jpg"></li>
+	</ul>
+</body>
+</html>

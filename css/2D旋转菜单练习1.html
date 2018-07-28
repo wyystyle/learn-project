@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D旋转菜单练习1</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		.f1{
+			width: 380px;
+			height: 400px;
+			background: purple;
+			margin: 100px auto;
+            
+		}
+		.f2{
+			width: 100%;
+			height: 50px；
+		}
+		.f2>li{
+			list-style: none;
+			width: 100px;
+			height: 100%;
+
+			float: left;
+			line-height: 50px;
+			text-align: center;
+			margin-left: 20px;
+		}
+		.f2>li:hover .f3 li{
+            transform: rotateY(0deg);
+            opacity: 1;
+		}
+
+		.f3>li{
+			list-style: none;
+			width: 100px;
+			height: 100%;
+			background: pink;
+			transform: rotateY(180deg);
+			transition: all 1s;
+			opacity: 0;
+		}
+		.f2>li.f3>li:nth-child(1):{
+			transform: rotateY(0deg);
+			transition-delay: 0ms;
+		}
+		.f3>li:nth-child(2){
+			transition-delay: 150ms;
+		}
+		.f3>li:nth-child(3){
+			transition-delay: 300ms;
+		}
+		.f3>li:nth-child(4){
+			transition-delay: 500ms;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="f1">
+		<ul class="f2">
+			<li>
+				<ul class="f3">
+					一级菜单
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			
+		    </li>
+			<li>
+				<ul class="f3">
+					一级菜单
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			
+		    </li>
+			<li>
+				<ul class="f3">
+					一级菜单
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			
+		    </li>
+		</ul>
+	</div>
+</body>
+</html>

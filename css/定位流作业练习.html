@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位流作业练习</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		header{
+			height: 80px;
+			padding-top: 20px;
+			box-sizing: border-box;
+
+		}
+		header nav{
+			width: 1000px;
+			height: 40px;
+			background: #808080;
+			margin: 0 auto;
+		}
+		header ul li{
+		      float: left;
+		      list-style: none;
+		      box-sizing: border-box;
+		      line-height: 40px;
+		      padding-left: 15px;
+		      padding-right: 30px;
+		      margin-left: 70px;
+
+		}
+		header ul li:nth-child(3){
+			width: 200px;
+			height: 100%;
+			background: red;
+			box-sizing: border-box;
+			padding-left: 75px;
+		}
+		header ul li a{
+			text-decoration: none;
+		}
+		header .fd0{
+
+		}
+		header .fd1{
+            width: 60px;
+			height: 200px;
+			background: red;
+			position: fixed;
+			top: 50%;
+			margin-top: -100px;
+			z-index: 2;
+
+
+		}
+		header .fd2{
+			width: 60px;
+			height: 200px;
+			background: red;
+			right: 0;
+			top: 50%;
+			margin-top: -100px;
+			position: fixed;
+			z-index: 2;
+
+		}
+		section{
+			width: 800px;
+			height: 400px;
+			background: 1px solid #000;
+			margin: 30px auto;
+		}
+		section img{
+			width: 100%;
+			height: 100%;
+		}
+		section .left1,section .right1{
+			width: 100px;
+			height: 50px;
+			display: block;
+			background: rgba(0,0,0,0.5);
+		
+		}
+
+		footer{
+			width: 100px;
+			height: 100px;
+			background: gray;
+			padding-left: 10px;
+			box-sizing: border-box;
+			line-height: 100px;
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			margin-right: 20px;
+		}
+		footer a{
+			text-decoration: none;
+			color: purple;
+		}
+		
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">天猫会员</a></li>
+				<li><a href="#">品牌街</a></li>
+				<li><a href="#">电器城</a></li>
+				<li><a href="#">营业厅</a></li>
+				<li><a href="#">魅力惠</a></li>
+			</ul>
+		</nav>
+		<div class="fd0">
+	    <div class="fd1"></div>
+	    <div class="fd2"></div>
+	
+	    </div>
+	</header>
+	<section class="section1">
+		<img src="../007/10.gif">
+		<span class="left1"><</span>
+		<span class="right1">></span>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+
+	</section>
+	<footer>
+		<a href="#">回到顶部</a>
+	</footer>
+</body>
+</html>

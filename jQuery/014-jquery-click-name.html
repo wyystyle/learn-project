@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>014-jquery-click-name</title>
+	<style>
+		.grandfather{
+			width: 500px;
+			height: 500px;
+			background: pink;
+			position: relative;
+		}
+		.father{
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			background: red;
+			left: 100px;
+			top: 100px;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			background: yellow;
+			left: 50px;
+			top: 50px;
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+		<script>
+			$(function(){
+				$('.son').on('click.zs',function(){
+					alert('click son zs')
+				})
+				$('.son').on('click.ls',function(){
+					alert('click son ls')
+				})
+			})
+		</script>
+</head>
+<body>
+	<div class="grandfather">
+		<div class="father">
+			<div class="son"></div>
+		</div>
+	</div>
+</body>
+</html>

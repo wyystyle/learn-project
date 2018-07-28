@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画轮播图练习1</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		div{
+			width: 400px;
+			height: 500px;
+			background: blue;
+			margin: 100px auto;
+			overflow: hidden;
+			border-radius: 10px;
+
+		}
+		div ul{
+			width: 2400px;
+			height: 400px;
+			animation: px 6s linear infinite;
+
+		}
+		@keyframes px{
+			from{
+				margin-left: 0px;
+			}
+			to{
+				margin-left:-2000px;
+			}
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+		ul li:hover{
+			opacity: 1;
+		}
+		ul li{
+			width: 400px;
+			height: 500px;
+			list-style: none;
+			float: left;
+		}
+		ul li img{
+			width: 400px;
+			height: 500px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>
+			     <img src="../007/11.jpg">
+			</li>
+			<li>
+			     <img src="../007/12.jpg">
+			</li>
+			<li>
+			     <img src="../007/13.jpg">
+
+			</li>
+			<li>
+			     <img src="../007/14.jpg">
+
+			</li>
+			<li>
+			     <img src="../007/15.jpg">
+
+			</li>
+			<li>
+			     <img src="../007/11.jpg">
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

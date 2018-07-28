@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>036-ajax-reward</title>
+	<style type="text/css">
+	body{
+		background: url(images/014.jpg);
+		background-size: cover;
+	}
+	button{
+		position: absolute;
+		left: 40%;
+		z-index: 4;
+	}
+		h1{
+			/*display: block;*/
+			color: red;
+			text-align: center;
+			display: none;
+		}
+		img{
+			position: absolute;
+			left: 50%;
+			margin-left: -300px;
+			top: 100px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>开奖了</button>
+	<h1></h1>
+	<img src="images/11.gif">
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').eq(0).one('click',function(){
+			// var $phtml=$('p').html()
+			// console.log($('p').html)
+			// console.log($('button').eq(0))
+			var jqXHR=$.ajax({
+				url:'http://10.196.18.35:3000',
+				type:"GET",
+				dataType:'json',
+			});
+			jqXHR.done(function(data){
+				$('h1').append(data.name).show(500)
+				$('img').show(1000);
+
+				
+			});
+		});
+
+	})
+</script>
+</html>

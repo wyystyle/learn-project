@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-jquery-offset</title>
+	<style type="text/css">
+		.box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #ccc;
+			overflow: scroll;
+		}
+		.son{
+			width: 2000px;
+			height: 2000px;
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+		<script>
+			$(function(){
+				var oBtn=$('.btn')[0];
+				oBtn.onclick=function(){
+					console.log($('.box').scrollTop());
+
+				}
+			})
+		</script>
+</head>
+<body>
+	<div class="box">
+		<div class="son"></div>
+	</div>
+	<input type="button" value="点" class="btn">
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020-lunbotu</title>
+	<style type="text/css">
+	.bbo{
+		width: 1269px;
+		height: 846px;
+		overflow: hidden;
+	}
+		#box{
+			width:2538px; 
+			height: 846px;
+			position: relative;
+		}
+		li{
+			width: 1269px;
+			height: 846px;
+			float: left;
+		}
+		span{
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background: #ccc;
+		}
+		#left{
+			position: absolute;
+			top: 400px;
+			left: 0px;
+		}
+		#right{
+			position: absolute;
+			top: 400px;
+			left: 1219px;
+		}
+
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBox = document.getElementById('box');
+			var aLi = oBox.getElementsByTagName('li');
+			var oLeft = document.getElementById('left');
+			var oRight = document.getElementById('right');
+			oLeft.onclick=function(){
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="bbo">
+			<ul id="box">
+				<li><img src="images/1.jpg"></li>
+				<li><img src="images/2.jpg"></li>
+			</ul>
+			<span id="left">&lt;</span>
+	 		<span id="right">&gt;</span>
+	</div>
+</body>
+</html>

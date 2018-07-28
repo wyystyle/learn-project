@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<style type="text/css">
+		#canvas{
+			border: 1px solid #ccc;
+			/*width: 200px;
+			height: 200px;*/
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas">
+		你的浏览器不支持，亲更换新版本的浏览器
+	</canvas>
+</body>
+<script type="text/javascript">
+	var oCanvs=document.getElementById('canvas');
+	oCanvs.width=200;
+	oCanvs.height=200;
+	//获取画布的上下文环境
+	var ctx=oCanvs.getContext('2d');
+	ctx.moveTo(0,100);//起点
+	ctx.lineTo(200,0);//划线的终点
+	ctx.lineTo(100,150)
+	ctx.strokeStyle="red";
+	ctx.closePath();
+	ctx.fillStyle="yellow";
+	ctx.lineWidth=5;
+	ctx.stroke();//描边，没有不显示画的图
+	ctx.fill();
+
+	// ctx.beginPath(); //重新开始一个画图
+	// ctx.moveTo(100,10);
+	// ctx.lineTo(100,200);
+	// ctx.stroke();
+
+
+</script>
+</html>

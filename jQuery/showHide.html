@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>showHide</title>
+<style type="text/css">
+	div{
+		width: 100px;
+		height: 100px;
+		border: 1px solid #ccc;
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div class="box" data-active='menu'></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		slient={
+			init:function($elem){
+				if($elem.is(':hidden')){
+					$elem.data('status','hidden')
+				}else{
+					$elem,data('status','shown')
+				}
+			},
+			show:function($elem){
+				if($elem.data('status')=='shown') return;
+				$elem.trigger('show');
+				$elem.show();
+				$elem.trigger('shown').data('status','hidden');
+			},
+			hide:function($elem){
+				if($elem.data('status')=='hidden') return;
+				$elem.trigger('hide');
+				$elem.hide();
+				$elem.trigger('hidden').data('status','shown');
+			}
+		}
+		var $elem=$('.box');
+		// $elem.on('show',function(){
+		// 	$elem.html('<p>我要显示了</p>')
+		// });
+		// $elem.on('shown',function(){
+		// 	$elem.html($elem.html()+'<p>我显示了</p>')
+		// })
+		$elem.on('show shown hide hidden',function(ev){
+			if(ev.type=='show'){
+				console.log('show....')
+			}else if(ev.type=='shown'){
+				console.log('shown....')
+			}else if(ev.type=='hide'){
+				console.log('hide....')
+			}else if(ev.type=='hidden'){
+				console.log('hidden....')
+			}
+
+		});
+		slient.init($elem);
+		$('button').eq(0).on('click',function(){
+			slient.show($elem);
+		})
+		$('button').eq(1).on('click',function(){
+			slient.hide($elem);
+		})
+	})
+</script>
+</html>

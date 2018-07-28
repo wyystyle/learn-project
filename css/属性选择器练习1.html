@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性选择器练习1</title>
+	<style>
+		[title$='baidu']{
+			color: red
+		}
+		[title^='baidu']{
+			color: red
+		}
+		[title*='baidu']{
+			color: red
+		}
+		[title|='baidu']{
+			color: red
+		}
+	</style>
+</head>
+<body>
+     <a href="#">a1</a>
+     <a href="#" title="www.baidu">a2</a>
+     <a href="#" title="wwww.baidu">a3</a>
+     <a href="#" title="baidu.com">a4</a>
+     <a href="#" title="baidu">a5</a>
+     <a href="#" title="baidu-com">a6</a>
+     <a href="#" title="wwww.baidu.com">a7</a>
+     <a href="#" title="baidu.">a8</a>
+</body>
+</html>

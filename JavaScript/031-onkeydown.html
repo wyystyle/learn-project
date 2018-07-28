@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>031-onkeydown</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBox=document.getElementById('box');
+			document.onkeydown=function(ev){
+				oEvent = ev || event;
+				if(oEvent.keyCode==37){
+					oBox.style.left=oBox.offsetLeft-10+'px';
+				}
+				if(oEvent.keyCode==39){
+					oBox.style.left=oBox.offsetLeft+10+'px';
+				}
+				if(oEvent.keyCode==38){
+					oBox.style.top=oBox.offsetTop-10+'px';
+				}
+				if(oEvent.keyCode==40){
+					oBox.style.top=oBox.offsetTop+10+'px';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

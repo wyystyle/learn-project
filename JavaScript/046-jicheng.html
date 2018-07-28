@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>046-jicheng</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+			Person.prototype.showName=function(){
+				console.log("My name is "+this.name);
+			}
+			Person.prototype.showAge=function(){
+				console.log("I am "+this.age+" years old");
+			}
+		}
+		var p1=new Person("Tom",18);
+		p1.showName();
+		p1.showAge();
+		function Student(name,age,classname){
+			//this.name=name;
+			//this.age=age;
+			Person.call(this,name,age);
+
+			this.classname=classname;
+			/*Student.prototype.showName=function(){
+				console.log("My name is "+this.name);
+			}
+			Student.prototype.showAge=function(){
+				console.log("I am "+this.age+" years old");
+			}*/
+
+			/*
+			for(key in Person.prototype){
+				Person.prototype[key]=Student.prototype[key];
+			}
+			*/
+			Student.prototype=new Person();
+
+			Student.prototype.showClassname=function(){
+				console.log("I am from" +this.classname);
+			}
+		}
+		var s1=new Student("Tom",20,"computer");
+		s1.showName();
+		s1.showAge();
+		s1.showClassname()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

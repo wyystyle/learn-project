@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>024-onscroll</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}	
+		body{
+			height: 3000px;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			right: 0px;
+		}
+	</style>
+	<script type="text/javascript">
+		function animation(obj,attr,iTarget){
+				clearInterval(obj.timer);
+				obj.timer=setInterval(function(){
+					var curr=parseFloat(getComputedStyle(obj,false)[attr]);
+					if(attr=='opacity'){
+						curr=curr*100;
+					}
+					if(curr<iTarget){
+						iSpeed=30;
+					}else{
+						iSpeed=-30;
+					}
+					if(Math.abs(iTarget-curr)<=Math.abs(iSpeed)){
+						clearInterval(obj.timer);
+						if(attr=='opacity'){
+							obj.style[attr]=iTarget/100;
+						}else{
+							obj.style[attr]=iTarget+'px';
+						}
+						
+					}else{
+						if(attr=='opacity'){
+							obj.style[attr]= (curr+iSpeed)/100;
+						}else{
+							obj.style[attr]= curr+iSpeed+'px';
+						}	
+					}
+				},10)
+			}
+		window.onresize=window.onscroll=window.onload = function(){
+			var oBox=document.getElementById('box');
+			var iHeight = window.innerHeight;
+			var iTop = document.body.scrollTop || 
+			document.documentElement.scrollTop;
+			iTarget=iTop + iHeight -oBox.offsetHeight;
+			animation(oBox,'top',iTarget);
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>照片过渡练习</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		ul{
+			width: 1000px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 50px auto;
+			list-style: none;
+			overflow: hidden;
+		}
+		ul li{
+			width: 200px;
+			height: 600px;
+			float: left;
+			transition:width 1s;
+		}
+		ul li img{
+			height: 100%;
+		}
+		ul li:hover{
+			width: 400px;
+		}
+		ul:hover li{
+			width: 150px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="../007/11.jpg"></li>
+		<li><img src="../007/12.jpg"></li>
+		<li><img src="../007/13.jpg"></li>
+		<li><img src="../007/14.jpg"></li>
+		<li><img src="../007/15.jpg"></li>
+	</ul>
+</body>
+</html>

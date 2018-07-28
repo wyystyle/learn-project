@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015-setTimeout</title>
+	<style type="text/css">
+		#leftbox{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			float: left;
+			margin-right: 20px;
+		}
+		#rightbox{
+			width: 400px;
+			height: 400px;
+			background: tomato;
+			float: left;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oLeft=document.getElementById('leftbox');
+			var oRight=document.getElementById('rightbox')
+			var time=null;
+			oLeft.onmouseover=function(){
+				oRight.style.display='block';
+			}
+			oRight.onmouseout=function(){
+				oRight.style.display='none';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="leftbox"></div>
+	<div id="rightbox"></div>
+</body>
+</html>

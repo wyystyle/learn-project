@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css-rem-less</title>
+	<link rel="stylesheet" type="text/css" href="css/002.css">
+</head>
+<body>
+	<div class="container">
+		<img src="images/6.png" alt="">
+		<p>我五彩湾给哦我问从速 是建瓯市</p>
+	</div>
+</body>
+<script type="text/javascript">
+	(function(win,doc){
+
+		var oRoom=doc.getElementsByTagName('html')[0];
+		function fontSize(){
+			var iWidth=doc.body.clientWidth || doc.documentElement.clientWidth;
+
+			var iFontSize=iWidth/10;
+			oRoom.style.fontSize=iFontSize+'px';
+		}
+		win.addEventListener('resize',fontSize);
+		win.addEventListener('DOMContentLoaded',fontSize);
+ 		
+	})(window,document);
+</script>
+</html>

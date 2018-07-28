@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>drug-调查问卷</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		.page{
+			width: 1000px;
+
+		}
+		.container{
+			float: left;
+
+			width: 500px;
+			min-height: 500px;
+		}
+		.room{
+			width: 500px;
+			float: left;
+			min-height: 500px;
+
+		}
+		.box{
+			width: 500px;
+			
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			var dragIn=null;
+			$('.room').on('dragstart','.box',function(){
+				dragIn=this
+			});
+			$('.container').on('drop',function(){
+				$(this).append($(dragIn).clone())
+			})
+			.on('dragover',function(ev){
+				ev.preventDefault();
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="page">
+		<div class="container">
+			<h2>调查问卷</h2>
+		</div>
+		<div class="room">
+			<div class="box" draggable='true'>
+				<lable>姓名</lable>
+				<input type="text">
+			</div>
+			<div class="box" draggable='true'>
+				<lable>年龄</lable>
+				<input type="text">
+			</div>
+			<div class="box" draggable='true'>
+				<lable>爱好</lable>
+				<input type="checkbox" name="hoppy">篮球
+				<input type="checkbox" name="hoppy">足球
+				<input type="checkbox" name="hoppy">乒乓球
+
+			</div>
+		</div>	
+	</div>
+		
+</body>
+</html>

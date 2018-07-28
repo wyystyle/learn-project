@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>018-jquery-test</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		.big{
+			width: 500px;
+			height: 300px;
+			background: pink;
+			overflow: hidden;
+		}
+		.box{
+			width: 600px;
+			height: 300px;
+			background: red;
+		}
+		.box li{
+			list-style: none;
+			width: 100px;
+			height: 300px;
+			float: left;
+			margin-left: 40px;
+			background: yellow;
+		}
+
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('li').click(function(){
+				$index=$('li').index();
+				$('.box').eq($index).animate({
+					marginLeft:100
+				},1000)
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="big">
+		<div class="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

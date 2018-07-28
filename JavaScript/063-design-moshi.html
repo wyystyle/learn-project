@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>063-design-moshi</title>
+</head>
+<body>
+	
+</body>
+<script>
+	;(function(w){
+		function Teacher(name){
+			this.name=name;
+			this.students=[];
+		}
+		Teacher.prototype={
+			constructer:Teacher,
+			register:function(student){
+				this.students.push(student);
+			},
+			publish:function(msg){
+				for(var i=0;i<this.students.length;i++){
+					this.students[i].listen(msg);
+				}
+			}
+		}
+
+
+
+		w.Teacher=Teacher;
+	})(window);
+	(function(w){
+		function Student(name,teacher){
+			this.name=name;
+			teacher.register(this);
+			this.msg='';
+		}
+		Student.prototype={
+			constructer:Student,
+			listen:function(msg){
+				this.msg=msg;
+			}
+		}
+
+		w.Student=Student;
+	})(window);
+
+	var teacher=new Teacher("Tom");
+	var s1=new Student("Leo",teacher);
+	var s2=new Student("Aey",teacher);
+	var s3=new Student("Pte",teacher);
+	teacher.publish('hellow');
+
+	console.log(s1.msg,s2.msg,s3.msg);
+</script>
+</html>

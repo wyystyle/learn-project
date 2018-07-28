@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas-渐变</title>
+	<style>
+		#canvas{
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+</body>
+<script type="text/javascript">
+	var oCanvs=document.getElementById('canvas');
+	oCanvs.width=600;
+	oCanvs.height=600;
+
+	var ctx=oCanvs.getContext('2d');
+	ctx.beginPath();
+	var str='Hallow,Word';
+
+	ctx.font='50px sans-serif';
+
+	ctx.fillText(str,0,200);
+	ctx.textAlign = 'left';
+	ctx.textBaseline = 'middle';
+
+	// ctx.textAlign='left';
+
+	ctx.strokeText(str,0,300)
+
+</script>
+</html>

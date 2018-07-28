@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023-jquery-ajax</title>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('button').click(function(){
+				$.ajaxSetup({
+				url:'./jsontom.json',
+				type:'GET',
+				dataType:'json',
+			})
+			$.ajax({
+				success:function(data){
+					console.log(data)
+				},
+				error:function(){
+					console.log('error')
+				},
+			})
+		})
+	})
+	</script>
+</head>
+<body>
+	<button>请求数据</button>
+</body>
+</html>

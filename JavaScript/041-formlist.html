@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>041-formlist</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oInput = document.getElementById('username');
+			var oBtn = document.getElementById('btn');
+			var oTp = document.getElementById('tp');
+			var oList = document.getElementById('list');
+			var isYes=false;
+			var 
+			oInput.onfocus = function(){
+				oTp.style.color='pink';
+				oTp.innerHTML='请输入3-6个用户名';
+			}
+			oInput.onblur=function(){
+				var l=oInput.value.length;
+				if(l>=3 && l<=6){
+					oTp.style.color='pink';
+					oTp.innerHTML='输入正确';
+					isYes = true;
+				}else{
+					oTp.style.color='red';
+					oTp.innerHTML='输入错误，请重新输入'
+				}
+				oInput.oninput= function(){
+
+				}
+				oBtn.onclick = function(){
+					if(!isYes){
+						return false;
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="http://www.baidu.com">
+		
+		<p>
+			<input type="text" id="username">
+			<span id="tp"></span>
+		</p>
+		<ul id="list">
+			
+		</ul>
+		<input type="submit" value="提交" id="btn">
+	</form>
+</body>
+</html>

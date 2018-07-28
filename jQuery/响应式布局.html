@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width"> 
+	<title>响应式布局</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			height: 50px;
+			background: red;
+			margin: 0 auto;
+		}
+		@media screen and (max-width: 992px){
+       		.heart1{
+       			float: left;
+       		}
+       		.heart2{
+       			float: left;
+       		}
+       		.heart3{
+       			float: left;
+       		}
+       		.heart4{
+       			float: left;
+       		}
+       		.heart5{
+       			float: left;
+       		}
+       		.heart6{
+       			float: left;
+       		}
+       		.heart7{
+       			float: left;
+       		}
+       		.heart8{
+       			float: left;
+       		}
+       		.heart9{
+       			float: left;
+       		}
+       		.heart10{
+       			float: left;
+       		}
+       		.heart11{
+       			float: left;
+       		}
+       		.heart12{
+       			float: left;
+       		}
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="heart1">div1</div>
+		<div class="heart2">div2</div>
+		<div class="heart3">div3</div>
+		<div class="heart4">div4</div>
+		<div class="heart5">div5</div>
+		<div class="heart6">div6</div>
+		<div class="heart7">div7</div>
+		<div class="heart8">div8</div>
+		<div class="heart9">div9</div>
+		<div class="heart10">div10</div>
+		<div class="heart11">div11</div>
+		<div class="heart12">div12</div>
+	</div>
+</body>
+<script>
+	(function(win,doc){
+		var oContainer=doc.querySelector('.container');
+		function resize(){
+			var oWidth=doc.body.clientWidth || doc.documentElement.clientWidth;
+			if(oWidth>1200){
+				oContainer.style.width='1170px';
+			}else if(oWidth>900){
+				oContainer.style.width='992px';
+			}else if(oWidth>700){
+				oContainer.style.width='770px';
+			}else{
+				oContainer.style.width='100%';
+			}
+		}
+		win.addEventListener('resize',resize,false);
+		win.addEventListener('DOMContentLoaded',resize,false)
+	})(window,document);
+</script>
+</html>

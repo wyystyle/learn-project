@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绝对定位参考点练习</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		.f1{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+			position: relative;
+			left: 200px
+		}
+		.f2{
+			width: 200px;
+			height: 200px;
+			background: yellow;
+			margin: 0 50px;
+			position: absolute;
+			left: 50px;
+			bottom: 0;
+			
+		}
+		.f3{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 20px;
+			bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="f1">
+		<div class="f2">
+			<div class="f3"></div>
+		</div>
+	</div>
+</body>
+</html>

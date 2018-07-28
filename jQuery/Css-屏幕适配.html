@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css-rem屏幕适配</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			width: 5rem;
+			float: left;
+		}
+		p{
+			font-size: 0.4rem;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="images/6.png" alt="">
+		<p>我五彩湾给哦我问从速 是建瓯市</p>
+	</div>
+</body>
+<script type="text/javascript">
+	(function(win,doc){
+
+		var oRoom=doc.getElementsByTagName('html')[0];
+		function fontSize(){
+			var iWidth=doc.body.clientWidth || doc.documentElement.clientWidth;
+
+			var iFontSize=iWidth/10;
+			oRoom.style.fontSize=iFontSize+'px';
+		}
+		win.addEventListener('resize',fontSize);
+
+
+
+
+
+	})(window,document);
+</script>
+</html>

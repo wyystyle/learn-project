@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>050-cj-div-Drug</title>
+	<style type="text/css">
+		/*#box{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}*/
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			new Drug({width:100,height:100,background:'red'});
+			Leo.prototype=new Drug(width:200,height:200,background:'pink');
+		}
+		function Drug(opation){
+
+			/*this.oBox=document.createElement('div');
+			this.oBox.style.width=opation.width+'px';
+			this.oBox.style.height=opation.height+'px';
+			this.oBox.style.background=opation.background;
+			this.oBox.style.position='absolute';
+
+			document.body.appendChild(this.oBox);*/
+			this.init();
+
+			this.disX=0;
+			this.disY=0;
+			this.oBox.onmousedown =this.fnDown.bind(this);
+		}
+		Drug.prototype.init=function(){
+			this.oBox=document.createElement('div');
+			this.oBox.style.width=this.opation.width+'px';
+			this.oBox.style.height=this.opation.height+'px';
+			this.oBox.style.background=this.opation.background;
+			this.oBox.style.position='absolute';
+			document.body.appendChild(this.oBox);
+		}
+
+
+		Drug.prototype.fnDown=function(ev){
+			var oEvent = ev|| event;
+			this.disX=oEvent.clientX-this.oBox.offsetLeft;
+			this.disY=oEvent.clientY-this.oBox.offsetTop;
+			document.onmousemove =this.fnMove.bind(this);
+			document.onmouseup=this.fnUp;
+		}
+		Drug.prototype.fnMove=function(ev){
+			var oEvent = ev|| event;
+			this.oBox.style.left=oEvent.clientX -this.disX +'px';
+			this.oBox.style.top=oEvent.clientY-this.disY+'px';
+			
+		}
+		Drug.prototype.fnUp=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+		function Leo(){
+			Leo.call(this,opation);
+		}
+		Leo.prototype.=new Object.create(Drug.prototype);
+		Leo.prototype.constructor=Leo;
+		Leo.prototype.fnMove=function(ev){
+			var oEvent = ev|| event;
+			var l=oEvent.clientX-this.disX;
+			var t=oEvent.clientY-this.disY;
+			if(l<0){
+				l=0;
+			}else if(l>=window.innerWidth-this.oBox.offsetWidth){
+				l=window.innerWidth-this.oBox.offsetWidth;
+			}
+			if(t<0){
+				t=0;
+			}else if(t>=window.innerHeight-this.oBox.offsetHeighth){
+				l=window.innerHeight-this.oBox.offsetHeight;
+			}
+			this.oBox.style.left=l +'px';
+			this.oBox.style.top=t+'px';
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

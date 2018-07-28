@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-jiqery-each-map</title>
+	<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var aLi=document.getElementsByTagName('li');
+			var arr=[12,12,34,56,77];
+			var arrlike={0:'name',1:'age',2:'sex',length:3};//必须有下标、值、length；
+			//源生代码遍历用arr.foreach();只能遍历普通数组，不能遍历伪数组及自定义对象；
+			//arr.map()同上；
+			//jqery 可以遍历伪数组 数组，以及自定义对象
+			//Top：each || map 里面函数传的参数不同
+			// $.each(arr,function(index,value){
+			// 	console.log(index+':::'+value);
+			// })
+			// $.each(aLi,function(index,value){
+			// 	console.log(value)
+			// })
+			// $.each(arrlike,function(index,value){
+			// 	console.log(value)
+			// })
+			// $.map(arr,function(value,index){
+			// 	console.log(index+':::'+value)
+			// })
+
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+		<li>li4</li>
+		<li>li5</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015-Attribute</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBtn=document.getElementById('btn');
+			var oTxt=document.getElementById('txt');
+			oBtn.onclick = function(){
+				oTxt.setAttribute('value','');
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="添加" id="btn">
+	<input type="text" id="txt" value="woshi">
+</body>
+</html>

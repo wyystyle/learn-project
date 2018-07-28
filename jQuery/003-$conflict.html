@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-$conflict</title>
+	<script type="text/javascript">
+		(function(w){
+			function test(){
+				alert('Tom')
+			}
+			window.$=test;
+		})(window)
+	</script>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+
+		jQuery(function(){
+			//释放jQuery中的$
+			var kz=jQuery.noConflict();
+
+			$();
+
+			alert('aaa');
+			/*console.log(kz==$);*/ //false
+			console.log(kz==jQuery); //true
+		})
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

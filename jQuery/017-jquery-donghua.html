@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>017-jquery-donghua</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #ccc;
+			background: pink;
+			display: none;
+
+		}
+
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+		<script>
+			$(function(){
+				// $('button').eq(0).click(function(){
+				// 	$('div').show(1000,function(){
+				// 		alert('show')//显示
+				// 	})					
+				// })
+				// $('button').eq(1).click(function(){
+				// 	$('div').hide(1000,function(){
+				// 		alert('hide')//隐藏
+				// 	})
+				// })
+				// $('button').eq(2).click(function(){
+				// 	$('div').toggle(1000,function(){
+				// 		alert('toggle')//切换
+				// 	})					
+				// })
+				// $('button').eq(0).click(function(){
+				// 	$('div').slideDown(1000,function(){
+				// 		alert('show')//卷入
+				// 	})					
+				// })
+				// $('button').eq(1).click(function(){
+				// 	$('div').slideUp(1000,function(){
+				// 		alert('hide')//卷出
+				// 	})
+				// })
+				// $('button').eq(2).click(function(){
+				// 	$('div').slideToggle(1000,function(){
+				// 		alert('toggle')//切换
+				// 	})					
+				// })
+				$('button').eq(0).click(function(){
+					$('div').fadeIn(1000,function(){
+						alert('show')//淡入
+					})					
+				})
+				$('button').eq(1).click(function(){
+					$('div').fadeUp(1000,function(){
+						alert('hide')//淡出
+					})
+				})
+				$('button').eq(2).click(function(){
+					$('div').fadeToggle(1000,function(){
+						alert('toggle')//切换
+					})					
+				})
+				$('button').eq(3).click(function(){
+					$('div').fadeTo(1000,0.5,function(){
+						alert('toggle')//切换
+					})					
+				})
+			})
+								
+			
+		</script>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+	<button>淡入至</button>
+	<div></div>
+</body>
+</html>

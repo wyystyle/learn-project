@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>037-fangdajing</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#box{
+			width: 400px;
+			height: 400px;
+			position: relative;
+		}
+		#smallBox{
+			width: 100%;
+			height: 100%;
+			border: 1px solid #ccc;
+			border-right: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#list{
+			width: 100%;
+			height: 54px;
+			position: absolute;
+			left: 0;
+			top: 410px;
+		}
+		#list li{
+			list-style: none;
+			float: left;
+			margin-left: 10px;
+		}
+		#list li.active{
+			width: 54px;
+			height: 54px;
+			border: 1px solid red;
+		}
+		#biaBox{
+			width: 600px;
+			height: 600px;
+			position: absolute;
+			left: 402px;
+			top: 0px;
+			border: 1px solid #ccc;
+			background: tomato;
+		}
+		#mask{
+			width: 200px;
+			height: 200px;
+			background: rgba(255,255,0,0.5);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		function $(id){
+			return document.getElementByID('id')
+		}
+		window.onload =function(){
+			var oLi = $('list').getElementsByTagName('li');
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div id="smallBox">
+			<img src="" alt="">
+			<span id="mask"></span>
+		</div>
+		<div id="list">
+			<ul>
+				<li class="active"><img src="images/s1.jpg"></li>
+				<li><img src="images/s2.jpg"></li>
+				<li><img src="images/s3.jpg"></li>
+			</ul>
+		</div>
+		<div id="biaBox"></div>
+	</div>
+</body>
+</html>

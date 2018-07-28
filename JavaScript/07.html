@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			display: none;
+		}
+		.active{
+			background: yellow;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oIp = document.getElementsByTagName('input');
+			var oDiv = document.getElementsByTagName('div');
+			for(var i=0;i<oIp.length;i++){
+				oIp[i].index=i;
+				oIp[i].onclick=function(){
+					for(var j=0;j<oIp.length;j++){
+						oIp[j].className='';
+						oDiv[j].style.display='none'
+					}
+					this.className='active';
+					oDiv[this.index].style.display='block';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="1" class="active">
+	<input type="button" value="2">
+	<input type="button" value="3">
+	<input type="button" value="4">
+	<div style="display: block;">1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+</body>
+</html>

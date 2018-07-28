@@ -1,0 +1,116 @@
+@color:red;
+@w:200px;
+@h:200px;
+
+
+// body{
+	
+// }
+// h1{
+// 	color: @color;
+// }
+// a:hover{
+// 	color: @color;
+// }
+*{
+	margin: 0;
+	padding: 0;
+}
+.div1{
+	width: @w;
+	height: @w;
+	color: white;
+	background: @color;
+}
+.div{
+	width: @w;
+	height: @w;
+	background: @color;
+}
+
+.border-radius-def(@border-width){
+	-webkit-border-radius:@border-width;
+	-ms-border-radius:@border-width;
+	-o-border-radius:@border-width;
+	border-radius: @border-width;
+
+}
+.div2{
+	.div;
+	.border-radius-def(20px);
+}
+
+
+.traggle(top,@w:10px,@c:red){
+	border-width: @w;
+	border-color: @c transparent transparent transparent;
+}
+.traggle(right,@w:10px,@c:red){
+	border-width: @w;
+
+	border-color: transparent transparent @c transparent;
+}
+.traggle(buttom,@w:10px,@c:red){
+
+	border-width: @w;
+	border-color: transparent transparent @c transparent;
+}
+.traggle(left,@w:10px,@c:red){
+
+	border-width: @w;
+	border-color:transparent transparent transparent @c;
+}
+.traggle(@_,@w:10px,@c:red){
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-style: solid;
+}
+.div3{
+	.traggle(right)
+}
+.list{
+		width: 100%;
+	li{	
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		list-style: none;
+		a{
+			float: left;
+			text-decoration: none;
+		}
+		span{
+		
+			float: right;
+		}
+
+		&:hover{
+			background: red;
+		}
+	}
+
+}
+//@s和数字之间必须有空格
+.fs(@s){
+	font-size: @s * 10px;
+}
+.div4{
+	.div;
+	.fs(5px);
+}
+// 数字计算之间必须有空格
+.div5{
+	font-size: ~'calc(50px - 10px)';
+
+}
+.setStyle(@attr,@value){
+	@{attr}:unit(@value,px);
+}
+
+.div6{
+	.setStyle(width,400);
+	.setStyle(height,400);
+	background: pink;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>convas-test1</title>
+	<style type="text/css">
+		#canvas{
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas">
+		
+	</canvas>
+</body>
+<script>
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=1000;
+	oCanvas.height=600;
+	var ctx=oCanvas.getContext('2d');
+
+	ctx.beginPath();
+	ctx.arc(100,100,100,0,2*Math.PI,true);
+	ctx.fillStyle='red';
+	ctx.fill();
+</script>
+</html>

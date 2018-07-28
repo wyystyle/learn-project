@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-jquery-extend</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #ccc;
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		(function($){
+			$.fn.extend({
+				setColor:function(opations){
+					var flasgs={
+						color:'red'
+					}
+					opation=$.extend(flasgs,opations);
+
+					this.each(function(opation){
+						this.style.color=opation.color;
+
+					})
+
+				}
+			})
+
+
+		})(jQuery)
+	</script>
+	<script>
+		$(function(){
+			$('button').click(function(){
+				// $('div').css({
+				// 	color:'red',
+				// })
+				$('div').setColor()
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>点我变色</button>
+	<div>我是颜色</div>
+</body>
+</html>

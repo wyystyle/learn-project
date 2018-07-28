@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var Btn=document.getElementById('btn')
+			var Msg=document.getElementById('msg')
+			Btn.onclick=function(){
+				if(Msg.style.display=='none')
+				{
+					Msg.style.display='block';
+				}else{
+					Msg.style.display='none';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input id="btn" type="button" value="消息">
+	<div id="msg" style="display:none">我是最新的</div>
+</body>
+</html>

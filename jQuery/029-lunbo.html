@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>029-lunbo</title>
+	<style type="text/css">
+		li{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="div">
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var $box=$('.div')
+		var $oImgbox=$('<ul class="imgbox"><li></li><li></li><li></li><li></li></ul><span class="nextbtn"></span class="lastbtn"><span></span><ul class="bottombtn"><li></li><li></li><li></li><li></li></ul>');
+		$box.append($oImgbox);
+		// console.log($box);
+
+	})
+</script>
+</html>

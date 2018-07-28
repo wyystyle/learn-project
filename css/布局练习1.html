@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>布局练习1</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}	
+	.w{
+		width: 800px;
+		margin: 0 auto;
+	}
+	.clearfix:after{
+		content: "";
+		clear: both;
+		display: block;
+		height: 0px;
+		visibility: hidden;
+	}
+	header{
+		height: 100px;
+	}
+	header.w{
+		margin-bottom: 10px;
+	}
+	.box1{
+		width: 100px;
+		height: 100px;
+		background: red;
+		float: left;
+	}
+	.box2{
+		width: 200px;
+		height: 50px;
+		background: gray;
+		float: right;
+	}
+	.box3{
+		width: 600px;
+		height: 50px;
+		background: purple;
+		float: right;
+	}
+	section{
+		height: 600px;
+
+	}
+	.box4{
+		width: 700px;
+		height: 580px;
+		float: left;
+	}
+	.box41{
+		width: 700px;
+		height: 520px;
+		margin-bottom: 10px;
+	}
+	.box411{
+		width: 600px;
+		height: 520px;
+		float: left;
+	}
+	.box4111{
+		width: 600px;
+		height: 255px;
+		background: yellow;
+		margin-bottom: 10px;
+
+	}
+	.box4112{
+		width: 600px;
+		height: 255px;
+		background: yellow;
+	}
+	.box412{
+		width: 80px;
+		height: 520px;
+		background: orange;
+		float: right;
+	}
+	.box42{
+		width: 700px;
+		height: 50px;
+		background: red;
+
+	}
+	.box5{
+		width: 80px;
+		height: 580px;
+		background: blue;
+		float: right;
+	}
+	footer{
+		height: 50px;
+		background: black;
+	}
+</style>
+<body>
+	<header class="w clearfix">
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</header>
+	<section class="w">
+		<div class="box4">
+			<div class="box41">
+				<div class="box411">
+					<div class="box4111"></div>
+					<div class="box4112"></div>
+				</div>
+				<div class="box412"></div>
+			</div>
+			<div class="box42"></div>
+		</div>
+		<div class="box5"></div>
+	</section>
+	<footer class="w"></footer>
+
+</body>
+</html>

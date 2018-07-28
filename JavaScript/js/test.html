@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <button>请求</button> -->
+</body>
+<script type="text/javascript">
+	// document.cookie="name=Tom";
+	// var oDate=new Date();
+	// 	oDate.setDate(oDate.getDay()+14);
+	// 	document.cookie="name=Tom;expries="+oDate
+
+		function setCookie(key,value,iDate){
+			var oDate=new Date();
+			oDate.setDate(oDate.getDay()+iDate);
+			document.cookie=key+"="+value+";expries="+oDate
+							 
+		}
+		setCookie("sex","男",1);
+		console.log(document.cookie)
+		function getCookie(key){
+			var value='';
+			var str=document.cookie;
+			arr1=str.split(';')
+			for(i=0;i<arr1.length;i++){
+				arr2=arr1[i].split('=');
+				if(arr2[0].trim()==key.trim()){
+					value=arr2[1]
+					break
+				}
+			}
+			return value;
+		}
+		
+</script>
+</html>

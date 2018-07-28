@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>017-search</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBtn=document.getElementById('btn');
+			var oTxt=document.getElementById('txt');
+			var oUl=document.getElementById('ul1');
+			var aLi=oUl.children;
+			oBtn.onclick=function(){
+				for(var i=0;i<aLi.length;i++){
+					if(oTxt.innerHTML==aLi[i].value){
+						aLi[i].style.background='pink';
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="搜搜">
+	<ul id="ul1">
+		<li>Tom</li>
+		<li>Ton</li>
+		<li>Monkey</li>
+		<li>Pannada</li>
+		<li>Dog</li>
+		<li>Cat</li>
+	</ul>
+</body>
+</html>

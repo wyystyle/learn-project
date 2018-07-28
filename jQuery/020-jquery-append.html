@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020-jquery-append</title>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			var $li=$('<li>我是创建Li</li>');
+			var $p=$('<p>我是P</p>')
+			$('button').click(function(){
+				// $('ul').append($li);
+				// $('ul').prepend($li)
+				// $('ul').after($p);
+				$('ul').before($p);
+			})		
+				
+		})
+	</script>
+</head>
+<body>
+	<button>创建</button>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

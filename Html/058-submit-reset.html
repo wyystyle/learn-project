@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>058-submit-reset</title>
+</head>
+<body>
+	<form action="https://www.baidu.com">
+		<div>
+			<input type="text" name="username">
+		</div>
+		<div>
+			<input type="text" name="age">
+		</div>
+		<div>
+			<select id="lis">
+				<option value="1">北京</option>
+				<option value="2">上海</option>
+				<option value="3">深圳</option>
+			</select>
+		</div>
+		<div>
+			<input type="submit" value="提交1" id="btn1">
+			<button type="submit">提交2</button>
+			<input type="image" src="images/s1.jpg" value="提交3">
+			<input type="button" value="提交4" id="btn4">
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	var aForm=document.forms;
+	var oForm=aForm[0];
+	var oBtn1=document.getElementById('btn1');
+	var oBtn4 = document.getElementById('btn4');
+	//oForm.username.focus();获取焦点
+	oBtn4.onclick=function(){
+		oForm.submit();
+	}
+</script>
+</html>

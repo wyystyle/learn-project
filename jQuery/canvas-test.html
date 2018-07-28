@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas-test</title>
+	<style>
+		#canvas{
+			border: 1px solid #ccc;
+			background: #000;
+			margin-left: 200px;
+
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+</body>
+<script type="text/javascript">
+	var oCanvs=document.getElementById('canvas');
+	oCanvs.width=1000;
+	oCanvs.height=600;
+
+	var ctx=oCanvs.getContext('2d');
+	ctx.beginPath();
+
+	//随机数的获取；
+	function getRandom(min,max){
+		return Math.round((min+(max-min)*Math.random()));
+	}
+	function Ball(x,y,color){
+		this.x=x;
+		this.y=y;
+		this.color=color;
+		this.r=40;
+		//初始化一组小球变化的量
+		this.dX = getRandom(-5,5);
+		this.dY = getRandom(-5,5);
+		this.dR = getRandom(1,5);
+
+	}
+	Ball.prototype={
+
+		constructor:Ball,
+		render:function(){
+			ctx.save();
+			ctx.beginPath();
+			//变成实心圆
+			// ctx.fillStyle=this.color;
+			//空心圆
+			ctx.strokeStyle=this.color;
+			
+			ctx.arc(this.x,this.y,this.r,0,2*Math.PI,true);
+			//实心圆
+			// ctx.fill()
+
+			//空心圆
+			ctx.stroke();
+
+			ctx.restore();
+		},
+		update:function(){
+			this.x +=this.dX;
+			this.y+=this.dY;
+			this.r-=this.dR;
+			if(this.r<0){
+				this.r=0;
+			}
+		}
+	}
+	var colorArr=['red','blue','yellow','pink','white','tomato','green','orange'];
+	var ballArr=[];
+	oCanvs.addEventListener('mousemove',function(ev){
+		var ball = new Ball(ev.offsetX,ev.offsetY,colorArr[getRandom(0,colorArr.length-1)]);
+		ballArr.push(ball);
+		console.log('aa')
+	});
+	setInterval(function(){
+		ctx.clearRect(0,0,oCanvs.width,oCanvs.height);//清除画布
+		for(var i=0;i<ballArr.length;i++){
+			ballArr[i].render();
+			ballArr[i].update();	
+		}
+
+	},50)
+
+	
+
+</script>
+</html>

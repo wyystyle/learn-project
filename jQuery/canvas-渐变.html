@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas-渐变</title>
+	<style>
+		#canvas{
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+</body>
+<script type="text/javascript">
+	var oCanvs=document.getElementById('canvas');
+	oCanvs.width=600;
+	oCanvs.height=600;
+
+	var ctx=oCanvs.getContext('2d');
+
+	// 矩形渐变
+	ctx.beginPath();
+	var linearGradient=ctx.createLinearGradient(300,300,500,500);
+	linearGradient.addColorStop(0.1,'rgb(255,0,0)');
+	linearGradient.addColorStop(1,'rgb(0,255,255)');
+
+	ctx.fillStyle=linearGradient;
+	ctx.fillRect(300,300,200,200);
+	ctx.fill();
+
+	// 圆形渐变
+
+	ctx.beginPath();
+	var radialGradient=ctx.createRadialGradient(100,100,0,100,100,100);
+	radialGradient.addColorStop(0.1,'rgb(255,0,0)');
+	radialGradient.addColorStop(1,'rgb(0,255,0)');
+
+	ctx.fillStyle=radialGradient;
+	ctx.arc(100,100,100,0,2*Math.PI);
+	ctx.fill();
+
+</script>
+</html>

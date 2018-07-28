@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002-user-jQuery</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		//后面覆盖前面
+		//等到页面加载完之后再执行JS代码
+		/*window.onload = function(){
+			alert('aaa')
+		}*/
+		/*window.onload = function(){
+			alert('bbb')
+		}*/
+
+		//前面后面都能加载出来
+		//当加载到DOM节点时就可以加载出JS代码
+		/*jQuery(document).ready(function(){
+			alert('aaa')
+		});
+		jQuery(document).ready(function(){
+			alert('bbb')
+		});*/
+		/*$(document).ready(function(){
+			alert('aaa')
+		});
+		$(document).ready(function(){
+			alert('BBB')
+		});*/
+		$(function(){
+			alert('aaa')
+		});
+		$(function(){
+			alert('bbb')
+		})
+	</script>
+</head>
+<body>
+
+</body>
+</html>

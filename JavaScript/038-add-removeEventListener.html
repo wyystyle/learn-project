@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>038-add-removeEventListener</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #ccc;
+		}
+	</style>
+	<script type="text/javascript">
+		function show(){
+			alert(1)
+		}
+		window.onload = function(){
+			var oDiv = document.getElementById('div');
+			oDiv.addEventListener('click',show,false);
+			oDiv.addEventListener('click',function(){
+				alert(2)
+			},false)
+			oDiv.removeEventListever('click',show,false)
+		}
+
+	</script>
+</head>
+<body>
+	<div id="div"></div>
+</body>
+</html>

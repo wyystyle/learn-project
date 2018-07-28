@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>053-zhengze</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oTxt1=document.getElementById('txt1');
+			var oTxt2=document.getElementById('txt2');
+			var oBtn=document.getElementById('btn');
+			oBtn.onclick=function(){
+				var tm=/<[\w|\/]+>/g
+				oTxt2.value=oTxt1.value.replace(tm,'**');
+			}
+		}
+	</script>
+</head>
+<body>
+	<textarea id="txt1"></textarea>
+	<input type="button" id="btn" value="提交">
+	<textarea id="txt2"></textarea>
+</body>
+</html>
