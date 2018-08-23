@@ -1,5 +1,6 @@
 import React,{Component,Fragment} from 'react';
 import Item from './item.js';
+import axios from 'axios';
 
 class App extends Component{
 	constructor(props){
@@ -14,23 +15,55 @@ class App extends Component{
 
 	}
 
+	static getDerivedStateFromProps(props, state){
+		console.log('app getDerivedStateFromProps...')
+		return 111
+	}
+	shouldComponentUpdate(nextProps, nextState){
+		console.log('app shouldComponentUpdate...')
+		return true
+	}
+	getSnapshotBeforeUpdate(prevProps, prevState){
+		console.log('app getSnapshotBeforeUpdate...')
+		return 'aa'
+	}
+	componentDidUpdate(prevProps, prevState,snapshot){
+		console.log('app componentDidUpdate...')
+		
+	}
+
+	componentDidMount(){
+		axios
+		.get('http://127.0.0.1:3000/api/add')
+		.then((data)=>{
+			this.setState({
+				list:data.data
+			})
+				
+			
+		})
+	}
+
 
 	handleAdd(){
 		// this.setState({
 		// 	list:[...this.state.list,this.state.value],
 		// 	value:''
 		// })
+
 		this.setState((preState)=>({
 			list:[...preState.list,preState.value],
 			value:''
-		}))
+		}),()=>{
+			// console.log(this.url.querySelectorAll('li'))
+		})
 
 	}
 	handleChange(e){
 		// this.setState({
 		// 	value:e.target.value
 		// })
-	const value = e.target.value
+	const value = this.input.value;
 		this.setState((preState)=>({
 				value
 
@@ -62,6 +95,7 @@ class App extends Component{
 				})
 	}
 	render(){
+		console.log('App render....')
 		return(
 			/*
 			<Fragment>
@@ -70,9 +104,24 @@ class App extends Component{
 			</Fragment>
 			*/
 			<div>
-				<input value={this.state.value} onChange={this.handleChange} />
-				<button onClick={this.handleAdd}>增加</button>
-				<ul>{
+				<input 
+					value={this.state.value} 
+					onChange={this.handleChange}
+					ref = {(input)=>{
+						this.input = input
+						}
+					}
+				/>
+				<button 
+					onClick={this.handleAdd}
+					>增加
+				</button>
+				<ul 
+					ref = {(url)=>{
+						this.url = url 
+					  	}
+					}
+				>{
 					this.getItem()
 				}
 				</ul>
