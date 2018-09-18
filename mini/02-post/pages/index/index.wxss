@@ -1,0 +1,30 @@
+page{
+  background:#8aeb96;
+}
+
+.userinfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200rpx;
+}
+.userinfo-acatar{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.userinfo-name{
+  font-size: 40rpx;
+  color:#333;
+  margin-top: 20rpx;
+}
+.notto{
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  margin-top: 200rpx;
+
+}

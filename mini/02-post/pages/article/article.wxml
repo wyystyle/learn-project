@@ -1,0 +1,17 @@
+<!--pages/article/article.wxml-->
+<view class='containner'>
+  <swiper indicator-dots='true' indicator-active-color='#fff' autoplay='true' interval='2000'>
+    <swiper-item>
+      <image src='/images/swiper/2.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/swiper/3.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/swiper/4.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/swiper/5.jpg'></image>
+    </swiper-item>
+  </swiper>
+</view>
