@@ -1,4 +1,5 @@
 <!--pages/article/article.wxml-->
+<import src="./article-item-template/article-item-template.wxml" />
 <view class='containner'>
   <swiper indicator-dots='true' indicator-active-color='#fff' autoplay='true' interval='2000'>
     <swiper-item>
@@ -14,4 +15,11 @@
       <image src='/images/swiper/5.jpg'></image>
     </swiper-item>
   </swiper>
+  <view class='article-box'>
+    <block wx:for="{{articles}}"  wx:for-item="item" wx:key="articles" wx:for-index="idx">
+      <view catchtap='tapArticleItem' data-article-id="{{item.articleId}}">
+        <template is="articlesItem" data="{{...item}}"/>
+      </view>
+    </block>
+  </view>
 </view>
