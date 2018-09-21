@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/movie/movie",
     "pages/article/article",
     "pages/index/index",
     "pages/article/article-detail/article-detail"
@@ -7,5 +8,22 @@
   "window": {
     "navigationBarBackgroundColor": "#f21",
     "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor":"#f21",
+    "borderStyle":"white",
+    "backgroundColor":"#ccc",
+    "position":"top",
+    "list": [
+      {
+        "pagePath": "pages/article/article",
+        "text": "文章"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影"
+      }
+    ]
   }
+
 }

@@ -10,7 +10,7 @@ Page({
     // wx.navigateTo({
     //   url: '../article/article',
     // })
-    wx.redirectTo({
+    wx.switchTab({
       url: '../article/article',
     })
    

@@ -1,0 +1,11 @@
+.star-box image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 4rpx;
+  vertical-align: middle;
+}
+.star-box .sorce{
+  font-size: 28rpx;
+  color: #666;
+  vertical-align: middle;
+}

@@ -45,7 +45,7 @@
   position: relative;
 }
 .article-detail-operation-collection,
-article-detail-operation-share{
+.article-detail-operation-share{
   width: 40rpx;
   height: 40rpx;
   vertical-align: middle;
@@ -53,6 +53,9 @@ article-detail-operation-share{
   top: 10rpx;
   right: 100rpx;
   z-index: 999;
+}
+.article-detail-operation-share{
+  right: 50rpx;
 }
 .article-detail-operation-line{
   height:1rpx;

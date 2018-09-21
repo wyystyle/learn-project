@@ -2,7 +2,7 @@
 <view >
     <view class='article-detail-img'>
       <image class='article-detail-img-main' src="{{article.img}}"></image>
-      <image class='article-detail-img-music' src='/images/icon/music.png'></image>
+      <image catchtap='tapMusic' class='article-detail-img-music' src="{{isMusicPlay ? '/images/icon/music-stop.png' : '/images/icon/music-start.png'}}"></image>
     </view>
     <view class='article-detail-head'>
       <image class='article-detail-head-avatar' src='{{article.avatar}}'></image>
@@ -13,8 +13,8 @@
     <text class='article-detail-title'>{{article.title}}</text>
     <view class='article-detail-operation'>
       <image wx:if="{{articleCollected}}" catchtap='tapCollection' class='article-detail-operation-collection' src='/images/icon/collection.png'></image>
-      <image wx:else="{{articleCollected}}" catchtap='tapCollection' class='article-detail-operation-collection' src='/images/icon/collection-none.png'></image>
-      <image class='article-detail-operation-share' src=''></image>
+      <image wx:else catchtap='tapCollection' class='article-detail-operation-collection' src='/images/icon/collection-none.png'></image>
+      <image catchtap='tapShare' class='article-detail-operation-share' src='/images/icon/share.jpg'></image>
       <view class='article-detail-operation-line'></view>
     </view>
     <text class='article-detail-content'>{{article.description}}</text>

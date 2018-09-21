@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    isMusicPlay:false
   },
 
   /**
@@ -18,25 +18,77 @@ Page({
     this.setData({
       article: article
     });
-    var articleCollection = wx.setStorageSync('article_Storage');
+
+
+    var articleCollection = wx.getStorageSync('article_collection');
     var articleCollected = false;
     if (articleCollection) {
-      articleCollected = articleCollection[articleId]
+      articleCollected = !!articleCollection[articleId]
     } else {
       var data = {};
       data[articleId] = false;
-      wx.setStorageSync('article_Storage', data)
+      wx.setStorageSync('article_collection',data)
     }
+    this.setData({
+      articleCollected:articleCollected
+    })
+
+    //监听音乐播放状态
+    var _this = this;
+    var backgroundAudioManager = wx.getBackgroundAudioManager();
+    backgroundAudioManager.onPlay(function(){
+      _this.setData({
+        isMusicPlay: true
+      })
+    })
+    backgroundAudioManager.onPause(function(){
+      _this.setData({
+        isMusicPlay: false
+      })
+    })
 
   },
   tapCollection:function(){
-    var articleCollection = wx.getStorageSync('article_Storage');
+    var articleCollection = wx.getStorageSync('article_collection');
     var articleCollected = articleCollection[this.data.articleId];
     articleCollection[this.data.articleId] = !articleCollected;
-    wx.setStorageSync('article_Storage', articleCollection)
+    wx.setStorageSync('article_collection',articleCollection)
     this.setData({
-      articleCollected: articleCollected
+      articleCollected:!articleCollected
     })
+    wx.showToast({
+      title: articleCollected ? "取消成功" : "收藏成功"
+    })
+  },
+  tapShare:function(){
+    var itemList = ["分享QQ","分享微信","分享微博"];
+    wx.showActionSheet({
+      itemList:itemList,
+      success:function(res){
+        wx.showToast({
+          title: itemList[res.tapIndex] + "成功",
+        })
+      }
+    })
+  },
+  tapMusic:function(){
+    console.log(this.data)
+    var isMusicPlay = !!this.data.isMusicPlay;
+    var backgroundAudioManager = wx.getBackgroundAudioManager();
+    if (isMusicPlay){
+      backgroundAudioManager.pause()
+      this.setData({
+        isMusicPlay: false
+      })
+    }else{
+      backgroundAudioManager.src = this.data.article.music.src;
+      backgroundAudioManager.title = this.data.article.music.title;
+      backgroundAudioManager.coverImgUrl = this.data.article.music.coverImgUrl;
+      backgroundAudioManager.play()
+      this.setData({
+        isMusicPlay:true
+      })
+    }
   },
 
   /**
