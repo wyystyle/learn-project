@@ -1,4 +1,7 @@
 // pages/movie/movie.js
+var { getMovieListData } = require("../../utils/utils.js");
+var app = getApp();
+
 Page({
 
   /**
@@ -21,52 +24,41 @@ Page({
     //     console.log(res)
     //   }
     // })
+    
     var _this = this;
-    this.getData('http://t.yushu.im/v2/movie/in_theaters?start=0&count=3',function(data){
-      console.log(data);
+    var baseUrl = app.G_DATA.baseUrl;
+    var inTheatersUrl = baseUrl + 'in_theaters?start=0&count=3';
+    var comingSoonUrl = baseUrl + 'coming_soon?start=1&count=3';
+    var top250Url = baseUrl + 'top250?start=0&count=3';
+    getMovieListData(inTheatersUrl,function(data){
       _this.setData({
         inTheatersData:data,
-        inTheatersTag: "即将上映"
+        inTheatersTag: "即将上映",
+        inTheatersTypes:"inTheatersType"
       })
     })
-    this.getData('http://t.yushu.im/v2/movie/coming_soon?start=1&count=3', function (data) {
-      console.log(data);
+    getMovieListData(comingSoonUrl, function (data) {
       _this.setData({
         comingSoonData: data,
-        comingSoonTag:"正在上映"
+        comingSoonTag:"正在上映",
+        comingSoonTypes: "comingSoonType"
       })
     })
-    this.getData('http://t.yushu.im/v2/movie/top250?start=0&count=3', function (data) {
-      console.log(data);
+    getMovieListData(top250Url, function (data) {
       _this.setData({
         top250Data: data,
-        top250Tag: "豆瓣Top2018"
+        top250Tag: "豆瓣Top2018",
+        top250Types: "top250Type"
       })
     })
   },
-  getData:function(url,success){
-    var _this =this;
-    wx.request({
-      url:url,
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        success(_this.formatData(res.data));
-      }
+  tapMovieMore:function(tagTypes){
+    console.log(tagTypes)
+    var tagType = tagTypes.target.dataset.type;
+    console.log(tagType)
+    wx.navigateTo({
+      url: 'movie-more/movie-more?type=' + tagType
     })
-  },
-  formatData:function(data){
-    var arr=[];
-    for(var i=0;i<data.subjects.length;i++){
-      arr.push({
-        coverImg: data.subjects[i].images.large,
-        title: data.subjects[i].title,
-        stars: data.subjects[i].rating.stars,
-        score: data.subjects[i].rating.average
-      })
-    }
-    return arr;
   },
 
   /**

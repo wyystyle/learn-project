@@ -1,10 +1,9 @@
 <template name="starTemplate">
 <view class='star-box'>
-  <image src='/images/icon/star-actives.png'></image>
-  <image src='/images/icon/star-actives.png'></image>
-  <image src='/images/icon/star-actives.png'></image>
-  <image src='/images/icon/star-actives.png'></image>
-  <image src='/images/icon/star-actives.png'></image>
-  <text class='score'>5</text>
+<block wx:for="{{stars}}" wx:for-item="star" wx:key="star">
+  <image wx:if="{{star == 1}}" src='/images/icon/star-active.png'></image>
+  <image wx:else src='/images/icon/collection-none.png'></image>
+</block>
+<text class='score'>{{score}}</text>
 </view>
 </template>

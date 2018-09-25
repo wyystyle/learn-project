@@ -1,0 +1,12 @@
+<!--pages/movie/movie-more/movie-more.wxml-->
+<import src="../star-template/star-template.wxml" />
+<view class='item'>
+<block wx:for="{{moviesData}}" wx:for-item="movie" wx:key="">
+  <view class='movie-item-box'>
+    <image class='cover-img' src='{{movie.coverImg}}'></image>
+    <text class='title'>{{movie.title}}</text>
+    <template is="starTemplate" data="{{score:movie.score,stars:movie.stars}}" />
+  </view>
+</block>
+</view>
+
