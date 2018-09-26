@@ -1,9 +1,3 @@
-/*
-* @Author: TomChen
-* @Date:   2018-06-13 18:30:03
-* @Last Modified by:   TomChen
-* @Last Modified time: 2018-06-14 19:59:16
-*/
 ;(function($){
 	function Search($elem,options){
 		this.$elem = $elem;
